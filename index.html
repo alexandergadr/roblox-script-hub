@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBLOX SCRIPT HUB - File Locker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .locker-card { background: #12141c; border: 1px solid rgba(139, 92, 246, 0.2); box-shadow: 0 0 30px rgba(139, 92, 246, 0.1); }
+        /* === 1. POPUNDER === */
+        /* === 2. SOCIAL BAR === */
+    </style>
+</head>
+<body class="bg-[#08090d] text-[#c5c6c7] antialiased min-h-screen flex flex-col justify-between relative">
+
+    <div id="adblock-screen" class="hidden fixed inset-0 z-[110] bg-[#08090d]/95 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="w-full max-w-sm bg-[#12141c] border border-red-500/30 rounded-2xl p-6 text-center shadow-2xl">
+            <div class="w-14 h-14 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/20"><i class="fa-solid fa-shield-halved text-xl animate-pulse"></i></div>
+            <h2 class="text-lg font-bold text-white mb-2">Bloqueador Detectado</h2>
+            <p class="text-xs text-gray-400 mb-5 leading-relaxed">Para poder descargar el script gratuito debes apagar tu <span class="text-red-400 font-bold">Bloqueador o DNS Privado</span> y recargar.</p>
+            <button onclick="window.location.reload()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl text-xs transition uppercase tracking-wider"><i class="fa-solid fa-arrows-rotate mr-1"></i> Recargar</button>
+        </div>
+    </div>
+
+    <header class="w-full py-6 border-b border-gray-900/40 bg-[#08090d]/80 backdrop-blur-sm sticky top-0 z-40">
+        <div class="max-w-md mx-auto px-4 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-cube text-purple-500 text-lg"></i>
+            <span class="text-lg font-bold tracking-widest text-white uppercase font-mono">ROBLOX SCRIPT HUB</span>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-md locker-card rounded-2xl p-6 md:p-8">
+            <div class="text-center mb-6 border-b border-gray-900 pb-4">
+                <span class="text-[10px] font-bold text-purple-400 bg-purple-950/40 border border-purple-900/50 px-2.5 py-1 rounded-md uppercase tracking-widest">File Locker Activo</span>
+                <h2 class="text-xl font-bold text-white mt-3 mb-1">Verificación Requerida</h2>
+                <p class="text-xs text-gray-400">Completa las tareas de abajo para liberar el archivo de Blox Fruits.</p>
+            </div>
+
+            <div class="space-y-3 mb-6">
+                <a id="btn-sub" href="https://www.youtube.com/@ROBLOX_SCRIPT_HU" target="_blank" class="flex items-center justify-between bg-red-600 hover:bg-red-700 text-white font-bold text-xs p-4 rounded-xl transition tracking-wide uppercase">
+                    <span class="flex items-center gap-3"><i class="fa-brands fa-youtube text-base"></i><span>1. Suscribirse al Canal</span></span><i id="icon-sub" class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+                <a id="btn-like" href="https://www.youtube.com/@ROBLOX_SCRIPT_HU" target="_blank" class="flex items-center justify-between bg-gray-900 text-gray-500 font-bold text-xs p-4 rounded-xl pointer-events-none opacity-40 transition tracking-wide uppercase border border-gray-800/40">
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-heart text-base"></i><span>2. Dar Like al Video</span></span><i id="icon-like" class="fa-solid fa-lock text-[10px]"></i>
+                </a>
+                <a id="btn-ad" href="AQUÍ_VA_TU_SMARTLINK_DE_ADSTERRA" target="_blank" class="flex items-center justify-between bg-gray-900 text-gray-500 font-bold text-xs p-4 rounded-xl pointer-events-none opacity-40 transition tracking-wide uppercase border border-gray-800/40">
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-eye text-base"></i><span>3. Visitar Anuncio (30s)</span></span><i id="icon-ad" class="fa-solid fa-lock text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="my-4 overflow-hidden flex justify-center max-h-[90px]"></div>
+
+            <button id="btn-unlock-final" class="w-full bg-gray-900 text-gray-600 font-black text-center py-4 rounded-xl text-xs pointer-events-none opacity-40 uppercase tracking-widest flex items-center justify-center gap-2 border border-gray-800/50 transition-all duration-300"><i class="fa-solid fa-circle-down"></i> Descargar Script (RAW)</button>
+        </div>
+    </main>
+
+    <footer class="py-4 text-center text-[10px] text-gray-600 border-t border-gray-900/20 font-mono"><p>&copy; 2026 ROBLOX_SCRIPT_HU</p></footer>
+    <div id="wrap-ads-test" class="absolute top-0 left-0 w-1 h-1 opacity-0 pointer-events-none text-transparent"><div class="adBanner ad_box pub_300x250 ads_sponsor text-ads">ads</div></div>
+
+    <script>
+        const urlScriptReal = "https://pastebin.com/raw/49Z8uWsN";
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const testAd = document.getElementById('wrap-ads-test');
+                if (!testAd || testAd.offsetHeight === 0) document.getElementById('adblock-screen').classList.remove('hidden');
+            }, 800);
+        });
+        const btnSub = document.getElementById('btn-sub'); const btnLike = document.getElementById('btn-like'); const btnAd = document.getElementById('btn-ad'); const btnUnlockFinal = document.getElementById('btn-unlock-final');
+        const iconSub = document.getElementById('icon-sub'); const iconLike = document.getElementById('icon-like'); const iconAd = document.getElementById('icon-ad');
+        btnSub.addEventListener('click', () => { iconSub.className = "fa-solid fa-circle-check text-emerald-400 text-xs"; btnLike.className = "flex items-center justify-between bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs p-4 rounded-xl transition tracking-wide uppercase"; btnLike.style.pointerEvents = "auto"; btnLike.style.opacity = "1"; iconLike.className = "fa-solid fa-chevron-right text-[10px]"; });
+        btnLike.addEventListener('click', () => { iconLike.className = "fa-solid fa-circle-check text-emerald-400 text-xs"; btnAd.className = "flex items-center justify-between bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs p-4 rounded-xl transition tracking-wide uppercase"; btnAd.style.pointerEvents = "auto"; btnAd.style.opacity = "1"; iconAd.className = "fa-solid fa-chevron-right text-[10px]"; });
+        btnAd.addEventListener('click', () => { iconAd.className = "fa-solid fa-circle-check text-emerald-400 text-xs"; btnUnlockFinal.className = "w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-center py-4 rounded-xl text-xs transition-all duration-300 uppercase tracking-widest shadow-lg shadow-purple-950/20 cursor-pointer flex items-center justify-center gap-2 border-0"; btnUnlockFinal.style.pointerEvents = "auto"; btnUnlockFinal.style.opacity = "1"; });
+        btnUnlockFinal.addEventListener('click', () => { window.open("AQUÍ_VA_TU_SMARTLINK_DE_ADSTERRA", "_blank"); window.location.href = urlScriptReal; });
+    </script>
+</body>
+</html>
